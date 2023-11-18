@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+* {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.03em;
+}
+
+@keyframes leftintro {
+    0% {
+        transform: translateX(-200%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    100% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+}
+
+@keyframes leftoutro {
+    0% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    100% {
+        transform: translateX(-150%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+@keyframes rightintro {
+    0% {
+        transform: translateX(+150%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    100% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+}
+
+@keyframes rightoutro {
+    0% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    100% {
+        transform: translateX(+150%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+@keyframes bottomintro {
+    0% {
+      transform: translateY(+150%);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+}
+
+@keyframes bottomoutro {
+    0% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    100% {
+        transform: translateY(+150%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+@keyframes topintro {
+    0% {
+      transform: translateY(-150%);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+}
+
+@keyframes topoutro {
+    0% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    100% {
+        transform: translateY(-150%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #f31b26 #5F1114;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #5F1114;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #f31b26;
+    border-radius: 0px;
+    border: 3px solid #f31b26;
+  } 
+
+.list_container {
+    direction: rtl;
+    overflow:auto;
+}
+
+.item_direction {
+    direction: ltr;
+}
+
+.textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari, Chrome, Opera, Samsung */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Edge, IE */
+    user-select: none; /* Modern browsers */
+    pointer-events: none;
+    cursor: default;
+}
+
+.welcome {
+    margin-top: 30vh;
+}
+
+.bottombutton {
+    margin-top: auto;
+}
+
+.leftintro {
+    animation: leftintro 2s linear 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftoutro {
+    animation: leftoutro 2s linear 1.5s 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.rightintro {
+    animation: rightintro 2s linear 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightoutro {
+    animation: rightoutro 2s linear 1 normal forwards;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bottomintro {
+    transform: translateY(+150%);
+    animation: bottomintro 2s linear 1.5s 1 normal forwards;
+}
+
+.bottomoutro {
+    transform: translateY(-150%);
+    animation: bottomoutro 2s linear 1 normal forwards;
+}
+
+
+.topintro {
+    transform: translateY(-150%);
+    animation: topintro 2s linear 1 normal forwards;
+}
+
+.topoutro {
+    transform: translateY(+150%);
+    animation: topoutro 2s linear 1 normal forwards;
+}
+
+input[type] {
+    border-color: #E7FDFC;
+    background-color: #043432;
+    color: #E7FDFC;
+}
