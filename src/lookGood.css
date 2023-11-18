@@ -199,5 +199,6 @@ input[type] {
 }
 
 .auth {
+    height: 100vh;
     background-color: #043432;
 }
