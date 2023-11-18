@@ -1,8 +1,8 @@
 Deployed Site
 ---
-https://eventfull-backend.onrender.com/
+https://eventfull.onrender.com
 
-Backend Github: [https://github.com/TheMegaForce/eventfull](https://github.com/TheMegaForce/eventfull-backend)
+Backend Github: https://github.com/TheMegaForce/eventfull-backend
 
 <!--Table of Contents-->
 Table of Contents
