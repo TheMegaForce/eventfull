@@ -80,6 +80,9 @@ export const deleteAction = async ({params}) => {
     // send request to backend
     await fetch(URL + `/events/${id}/`, {
         method: "delete",
+        headers: {
+            'Authorization': `Token ${url_token}`
+        },
     })
 
     // redirect back to show page page

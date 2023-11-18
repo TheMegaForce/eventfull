@@ -72,18 +72,11 @@ const Show = () => {
                                     Update "{event.title}"
                             </motion.button>
                     </Form>
-                    <Form action={`/delete/${event.id}`} method="event">
-                        <a>
-                        <motion.button
-                                initial={{ opacity: 0.6 }}
-                                whileHover={{ scale: [null, 1.5, 1.4], backgroundColor: "red" }}
-                                transition={{ duration: 0.3 }}
-                                whileTap={{ scale: 0.9 }}
-                                whileInView={{ opacity: 1, backgroundColor: "#5F1114" }}
-                                className="bg-[#5F1114] text-[#E7FDFC] border-none p-3 mt-5">
-                                    DELETE "{event.title}"
-                            </motion.button>
-                        </a>
+                    <Form action={`/delete/${event.id}`} method="post">
+                        <button
+                            className="bg-[#5F1114] text-[#E7FDFC] border-none p-3 mt-5">
+                                DELETE "{event.title}"
+                        </button>
                     </Form>
                 </div>
                 <a onClick={handleBackRedirect}>

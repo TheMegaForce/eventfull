@@ -99,7 +99,7 @@ const Login = (props) => {
         />
         <button type="submit" className='text-sky-500 border-solid border-2 hover:animate-pulse'>Login</button>
       </Form>
-      <Link to="/signup" className="link-btn text-sky-500">Need a new account? Signup here.</Link>
+      <Link to="/register" className="link-btn text-sky-500">Need a new account? Signup here.</Link>
     </div>
    )
  }

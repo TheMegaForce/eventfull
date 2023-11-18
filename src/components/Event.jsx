@@ -21,10 +21,12 @@ const Post = ({ event }) => {
     const div = {
         textAlign: "left",
         background: "#043432",
+        borderColor: event.color,
         margin: "10px auto",
         padding: "1em",
         rotateX: rotateX,
         rotateY: rotateY,
+        borderWidth: "4px",
     };
 
     function handleRedirect() {
@@ -58,7 +60,7 @@ const Post = ({ event }) => {
                 dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
                 dragElastic={0.5}
                 whileTap={{ cursor: "grabbing" }} 
-                className={`col-span-2 rounded-[12px] text-[#E7FDFC] border border-10 border-solid border-[${event.color}]`}>
+                className={`col-span-2 rounded-[12px] text-[#E7FDFC] border border-30 border-solid border-[${event.color}]`}>
                     <a onClick={handleRedirect}>
                         <motion.h1 
                             initial={{ opacity: 0.6 }}
