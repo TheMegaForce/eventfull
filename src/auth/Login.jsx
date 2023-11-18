@@ -67,7 +67,7 @@ const Login = (props) => {
           if (userRes.data?.id) {
             // Store the user ID in localStorage
             localStorage.setItem("userId", userRes.data.id);
-            navigate('/home');
+            navigate('/');
           } else {
             alert('User ID not found');
           }

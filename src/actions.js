@@ -48,7 +48,7 @@ export const createAction = async ({ request }) => {
     });
 
     // redirect back to index page
-    return redirect("/home");
+    return redirect("/");
 };
 
 //updateAction => update a Event from form submissions to `/update/:id`
@@ -69,7 +69,7 @@ export const updateAction = async ({request, params}) => {
     })
 
     // redirect back to show page page
-    return redirect("/home")
+    return redirect("/")
 }
 
 //deleteAction => delete a Event from form submissions to `/delete/:id`
@@ -83,5 +83,5 @@ export const deleteAction = async ({params}) => {
     })
 
     // redirect back to show page page
-    return redirect("/home")
+    return redirect("/")
 }

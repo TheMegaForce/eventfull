@@ -16,10 +16,10 @@ const router = createBrowserRouter(
 createRoutesFromElements(
     <>
         <Route path="/" element={<App />}>
-            <Route path="home" element={<Index />} loader={indexLoader} />
-            <Route path="home/event/:id" element={<Show />} loader={showLoader} />
-            <Route path="home/new" element={<New />} />
-            <Route path="home/create" action={createAction} />
+            <Route path="" element={<Index />} loader={indexLoader} />
+            <Route path="event/:id" element={<Show />} loader={showLoader} />
+            <Route path="new" element={<New />} />
+            <Route path="create" action={createAction} />
             <Route path="update/:id" action={updateAction} />
             <Route path="delete/:id" action={deleteAction} />
 

@@ -14,7 +14,7 @@ const Show = () => {
         right.classList.remove("rightintro")
         right.classList.add("rightoutro")
         setTimeout(() => {
-            navigate('/home')
+            navigate('/')
         }, 3000);
     }
 
@@ -23,7 +23,7 @@ const Show = () => {
         right.classList.remove("rightintro")
         right.classList.add("rightoutro")
         setTimeout(() => {
-            navigate('/home')
+            navigate('/')
         }, 3000);
     }
 

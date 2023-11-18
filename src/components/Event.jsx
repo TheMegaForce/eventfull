@@ -35,7 +35,7 @@ const Post = ({ event }) => {
         bottom.classList.remove("bottomintro")
         bottom.classList.add("bottomoutro")
         setTimeout(() => {
-            window.location.replace(`/home/event/${event.id}`)
+            window.location.replace(`/event/${event.id}`)
         }, 3000);
     }
     
