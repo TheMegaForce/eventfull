@@ -9,9 +9,9 @@ const LogoutBTN = () => {
 
   const handleLogout = async (e) => {
     try {
-       console.log(url_token);
        if (url_token) {
           localStorage.removeItem("token")
+          localStorage.removeItem("ID")
           navigate('login');
         } else {
           alert('Cant Logout');
@@ -23,7 +23,7 @@ const LogoutBTN = () => {
 
   return (
     <button className='text-[#021817] bg-[#E7FDFC]' onClick={handleLogout}>
-      Logout {url_token}
+      Logout
     </button>
   )
 }

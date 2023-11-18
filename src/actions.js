@@ -2,36 +2,54 @@ import { redirect } from "react-router-dom"
 
 // YOUR DEPLOYED API BASE URL
 const URL = "https://eventfull-backend.onrender.com"
+const url_token = localStorage.getItem("token")
 
 //createAction => create a Event from form submissions to `/create`
-export const createAction = async ({request}) => {
+// export const createAction = async ({request}) => {
+//     // get form data
+//     const formData = await request.formData()
+
+//     // construct request body
+//     const newEvent = {
+//         title: formData.get("title"),
+//         icon: formData.get("icon"),
+//         description: formData.get("description"),
+//         timeStart: formData.get("timeStart"),
+//         timeEnd: formData.get("timeEnd"),
+//         allDay: formData.get("allDay"),
+//         color: formData.get("color"),
+//         owner: formData.get("owner"),
+//     }
+
+//     // send request to backend
+//     await fetch(URL + "/events/", {
+//         method: "post",
+//         headers: {
+//             "Content-Type": "multipart/form-data", 'Authorization': `Token ${url_token}`
+//         },
+//         body: JSON.stringify(newEvent)
+//     })
+
+//     // redirect back to index page
+//     return redirect("/")
+// }
+
+export const createAction = async ({ request }) => {
     // get form data
-    const formData = await request.formData()
+    const formData = await request.formData();
 
-    // construct request body
-    const newEvent = {
-        title: formData.get("title"),
-        icon: formData.get("icon"),
-        description: formData.get("description"),
-        timeStart: formData.get("timeStart"),
-        timeEnd: formData.get("timeEnd"),
-        allDay: formData.get("allDay"),
-        color: formData.get("color"),
-        owner: formData.get("owner"),
-    }
-
-    // send request to backend
+    // send request to backend with form data
     await fetch(URL + "/events/", {
         method: "post",
         headers: {
-            "Content-Type": "application/json"
+            Authorization: `Token ${url_token}`,
         },
-        body: JSON.stringify(newEvent)
-    })
+        body: formData, // Use formData directly as the body
+    });
 
     // redirect back to index page
-    return redirect("/")
-}
+    return redirect("/home");
+};
 
 //updateAction => update a Event from form submissions to `/update/:id`
 export const updateAction = async ({request, params}) => {
@@ -41,23 +59,17 @@ export const updateAction = async ({request, params}) => {
     // get Event id
     const id = params.id
 
-    // construct request body
-    const updatedEvent = {
-        title: formData.get("title"),
-        content: formData.get("content")
-    }
-
     // send request to backend
     await fetch(URL + `/events/${id}/`, {
         method: "put",
         headers: {
-            "Content-Type": "application/json"
+            'Authorization': `Token ${url_token}`
         },
-        body: JSON.stringify(updatedEvent)
+        body: formData,
     })
 
     // redirect back to show page page
-    return redirect(`/post/${id}`)
+    return redirect("/home")
 }
 
 //deleteAction => delete a Event from form submissions to `/delete/:id`
@@ -71,5 +83,5 @@ export const deleteAction = async ({params}) => {
     })
 
     // redirect back to show page page
-    return redirect("/")
+    return redirect("/home")
 }

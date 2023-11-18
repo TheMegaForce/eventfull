@@ -50,7 +50,11 @@ const Index = () => {
                     </h1>
                     <h1 className="welcome text-[#E7FDFC] font-medium">
                         Welcome!
+                        <br/>
+                        <br/>
+                        Please Login to create a New Event
                     </h1>
+                        <br/>
                     <LogoutBTN />
                     <LoginBTN />
                     <div className="bottombutton">

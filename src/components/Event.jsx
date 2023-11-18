@@ -35,7 +35,7 @@ const Post = ({ event }) => {
         bottom.classList.remove("bottomintro")
         bottom.classList.add("bottomoutro")
         setTimeout(() => {
-            window.location.replace(`/event/${event.id}`)
+            window.location.replace(`/home/event/${event.id}`)
         }, 3000);
     }
     
@@ -57,8 +57,8 @@ const Post = ({ event }) => {
                 }}
                 dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
                 dragElastic={0.5}
-                whileTap={{ cursor: "grabbing" }}
-                className="col-span-2 rounded-[12px] text-[#E7FDFC] border border-10 border-solid border-[#021817]">
+                whileTap={{ cursor: "grabbing" }} 
+                className={`col-span-2 rounded-[12px] text-[#E7FDFC] border border-10 border-solid border-[${event.color}]`}>
                     <a onClick={handleRedirect}>
                         <motion.h1 
                             initial={{ opacity: 0.6 }}
@@ -69,12 +69,14 @@ const Post = ({ event }) => {
                                 {event.title}
                         </motion.h1>
                     </a>
+                    <hr/>
                     <h1>
                         {event.timeStart} - {event.timeEnd}
                     </h1>
                     <textarea unselectable="true" readOnly className="list_container textarea text-left px-5">
                         {event.description}
                     </textarea>
+                    <img className="w-[40vw] h-[auto]" draggable={false} src={event.icon}></img>
             </motion.div>
         </motion.div>
     );

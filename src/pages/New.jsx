@@ -3,14 +3,7 @@ import { motion } from "framer-motion";
 
 const Index = () => {
 
-    function handleRedirect() {
-        const top = document.getElementById("top")
-        top.classList.remove("topintro")
-        top.classList.add("topoutro")
-        setTimeout(() => {
-            window.location.replace('/')
-        }, 0);
-    }
+    const userID = localStorage.getItem("userId")
 
     // For each post in the array render a Post component
     return <>
@@ -27,9 +20,25 @@ const Index = () => {
             <Form className="m-10" action="/create" method="post">
                 <input 
                     type="text" name="title" placeholder="write title here"/>
+                <input
+                    type="file" name="icon" />
                 <textarea className="min-h-[50vh] max-h-auto p-3 border-none  bg-[#043432] text-[#E7FDFC]"
-                    type="text" name="content" placeholder="write content here"/>
-                <a onClick={handleRedirect}>
+                    type="text" name="description" placeholder="write description here"/>
+                <input 
+                    type="text" name="timeStart" placeholder="YYYY/MM/DD"/>
+                <input 
+                    type="text" name="timeEnd" placeholder="YYYY/MM/DD (if all day, leave empty)"/>
+                    <br/>
+                    <br/>
+                <input 
+                    type="checkbox" name="allDay"/> <h1>All Day?</h1>
+                <input 
+                    type="text" name="color" placeholder="write valid CSS color here"/>
+                <input 
+                    type="text" name="owner" placeholder={`Please input ${userID}`} defaultValue={userID}/>
+                
+                {/* <a onClick={handleRedirect}> */}
+                <a>
                     <motion.button
                         initial={{ opacity: 0.6 }}
                         whileHover={{ scale: [null, 1.5, 1.4] }}
@@ -41,17 +50,11 @@ const Index = () => {
                     </motion.button>
                 </a>
             </Form>
-            <a onClick={handleRedirect}>
-                <motion.button
-                    initial={{ opacity: 0.6 }}
-                    whileHover={{ scale: [null, 1.5, 1.4] }}
-                    transition={{ duration: 0.3 }}
-                    whileTap={{ scale: 0.9 }}
-                    whileInView={{ opacity: 1 }}
+                <button
+                    type="submit"
                     className="bg-[#5F1114] text-[#E7FDFC] border-none p-3 m-10">
                         Back Home
-                </motion.button>
-            </a>
+                </button>
         </div>
     </div>
     </>;
